@@ -1,0 +1,33 @@
+1. 在[VS安装目录\Microsoft Visual Studio 14.0]\VC\VCWizards\AppWiz 目录里右键新建一个文件夹名为 WTL
+
+
+2. 把压缩包的 AppWiz 里的文件解压到刚新建的WTL文件夹里(注意是AppWiz 里的文件)
+
+
+3. 解压直接运行 Setup.js 文件直到看到 Done! 提示说明安装成功
+
+
+4.在[VS安装目录\Microsoft Visual Studio 14.0]\VC\include 目录里右键新建一个文件夹名同样为 WTL, 然后把压缩包的Include 里的文件解到这个文件夹里;
+
+
+5. 用NotePad++等打开default.vcxproj文件
+
+在[VS安装目录\Microsoft Visual Studio 14.0]\VC\VCWizards\default.vcxproj
+找到 
+<PropertyGroup Label="UserMacros" /> 在后面加上
+
+??? 
+
+<PropertyGroup>
+
+
+	<IncludePath>$(VCInstallDir)include\WTL;$(IncludePath)</IncludePath>
+
+
+</PropertyGroup>
+
+
+
+
+vs2015还要安装WFC模块（截图有用到）
+保存这样就行啦
